@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "Canvas.h"
+#include "SFML_EditorWidget.h"
 #include "AI_Model.h"
 
 QT_BEGIN_NAMESPACE

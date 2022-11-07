@@ -1,9 +1,8 @@
 #pragma once
 
 #include "neuronalNet.h"
-#include "CanvasObject.h"
+#include "SFML_EditorWidget.h"
 #include "netModel.h"
-#include "LineChart.h"
 
 class AI_Model: public QObject, public QSFML::Objects::CanvasObject
 {

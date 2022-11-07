@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "VisibleCamera.h"
-#include "BackgroundGrid.h"
 #include <QPushButton>
 
 using namespace QSFML;
@@ -21,22 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
     settings.contextSettings.antialiasingLevel = 8;
     m_canvas = new Canvas(ui->canvasWidget,settings);
 
-    VisibleCamera *cam      = new VisibleCamera("Camera");
-    BackgroundGrid *grid    = new BackgroundGrid("Grid");
-    CanvasObject *obj       = new CanvasObject("Test");
+    DefaultEditor *defaultEditor = new DefaultEditor();
 
-    grid->setSize(sf::IntRect(0,0,1800,1600));
-    grid->setLineColor({sf::Color(130,130,130),
-                        sf::Color(100,100,100),
-                        sf::Color(100,100,100),
-                        sf::Color(100,100,100),
-                        sf::Color(100,100,100)});
-    cam->setMaxMovingBounds(sf::FloatRect(grid->getSize()));
-
-    obj->addChild(grid);
-    obj->addChild(cam);
-
-    m_canvas->addObject(obj);
+    m_canvas->addObject(defaultEditor);
 
     m_model = new AI_Model();
     connect(ui->update_pushButton, &QPushButton::pressed,
