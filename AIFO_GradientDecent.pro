@@ -9,7 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 #include(../Neural-net-2-graphics/Neural-net-2-graphics.pri)
-include(Extern/Neural-net-2-graphics/Neural-net-2-graphics.pri)
+include(Extern/Neuronal-net-2-graphics/Neuronal-net-2-graphics.pri)
 
 SOURCES += \
     AI_Model.cpp \
